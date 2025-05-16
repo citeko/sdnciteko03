@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeri Kegiatan - SD Negeri Citeko 03</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .galeri {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .galeri img {
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <h1>SD Negeri Citeko 03</h1>
+        <p>Website Resmi Sekolah</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil</a>
+        <a href="guru.html">Guru</a>
+        <a href="staf.html">Staf</a>
+        <a href="berita.html">Berita</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <main>
+        <section>
+    <h2>Galeri Foto</h2>
+    <div class="galeri-grid">
+        <div class="galeri-item">
+            <img src="img/gambar1.png" alt="Upacara Bendera" onclick="showLightbox(this)">
+            <p class="caption">Lepas Sambut Kepala Sekolah</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar4.jpeg" alt="Kegiatan Pramuka" onclick="showLightbox(this)">
+            <p class="caption">Kegiatan Lupa lagi entah Momen apa</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar3.jpg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Ini Juga Lupa Momen Apa</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar5.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Upacara Bendera Setiap Hari Senin</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar6.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Upacara Bendera Setiap Hari Senin</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar7.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Upacara Bendera Setiap Hari Senin</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar8.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Kelompok Belajar topik Media Interaktif dan Transpormasi Digital</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar9.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Kelompok Belajar topik Media Interaktif dan Transpormasi Digital</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar10.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Kelompok Belajar topik Media Interaktif dan Transpormasi Digital</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar11.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Kelompok Belajar topik Media Interaktif dan Transpormasi Digital</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar12.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Lomba 17 Agustus: Tarik Tambang</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar13.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Lomba 17 Agustus: Tarik Tambang</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar14.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Lomba 17 Agustus: Tarik Tambang</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar15.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Lomba 17 Agustus: Tarik Tambang</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar16.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Lomba 17 Agustus: Tarik Tambang</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar17.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Lomba 17 Agustus: Tarik Tambang</p>
+        </div>
+        <div class="galeri-item">
+            <img src="img/gambar18.jpeg" alt="Lomba 17 Agustus" onclick="showLightbox(this)">
+            <p class="caption">Lomba 17 Agustus: Tarik Tambang</p>
+        </div>
+    </div>
+</section>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="showPrev(event)">&#10094;</span>
+    <img id="lightbox-img" src="">
+    <p id="lightbox-caption"></p>
+    <span class="next" onclick="showNext(event)">&#10095;</span>
+</div>
+
+
+
+    </main>
+
+    <footer>
+        &copy; 2025 Guru Amatiran From SD N Citeko 03
+    </footer>
+    <script>
+const galeriImages = document.querySelectorAll('.galeri-item img');
+let currentIndex = 0;
+
+function showLightbox(imgElement) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    currentIndex = Array.from(galeriImages).indexOf(imgElement);
+
+    lightbox.style.display = "flex";
+    lightboxImg.src = imgElement.src;
+    lightboxCaption.textContent = imgElement.alt;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+function showNext(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex + 1) % galeriImages.length;
+    updateLightbox();
+}
+
+function showPrev(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex - 1 + galeriImages.length) % galeriImages.length;
+    updateLightbox();
+}
+
+function updateLightbox() {
+    const img = galeriImages[currentIndex];
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox-caption").textContent = img.alt;
+}
+</script>
+</body>
+</html>
