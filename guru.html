@@ -4,85 +4,86 @@
   <meta charset="UTF-8" />
   <title>Daftar Guru - SD Negeri Citeko 03</title>
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    .foto-guru {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #ccc;
-      cursor: pointer;
-    }
-
-    /* Modal popup */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 9999;
-    }
-
-    .modal:target {
-      display: block;
-    }
-
-    .modal-content {
-      position: relative;
-      width: 90%;
-      max-width: 400px;
-      margin: 10% auto;
-      padding: 1em;
-      background: white;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .modal-img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .close {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background: red;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 50%;
-    }
-
-    .overlay {
-      position: fixed;
-      width: 100%; height: 100%;
-      top: 0; left: 0;
-    }
-  td {
-    color: #000 !important; /* Pakai !important biar menimpa CSS lama */
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
   }
-  </style>
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  td {
+    color: #000 !important;
+  }
+
+  .foto-guru {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    cursor: pointer;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+  }
+
+  .modal:target {
+    display: block;
+  }
+
+  .modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: 10% auto;
+    padding: 1em;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+  }
+</style>
+
 </head>
 <body>
   <header>
