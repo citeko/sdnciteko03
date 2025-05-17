@@ -2,17 +2,14 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daftar Guru - SD Negeri Citeko 03</title>
   <style>
     /* Reset & dasar */
-    * {
-      box-sizing: border-box;
-    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
       background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
       color: #333;
     }
     header {
@@ -42,22 +39,30 @@
       max-width: 960px;
       margin: 20px auto;
       padding: 20px;
-      background-color: white;
+      background: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+    footer {
+      text-align: center;
+      background-color: #003f7f;
+      color: white;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
 
-    /* Tabel responsif - disembunyikan di layar kecil */
+    /* TABEL (desktop & tablet) */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 0;
     }
     th, td {
       border: 1px solid #ccc;
       padding: 10px;
       text-align: left;
       vertical-align: middle;
+      color: black;
+      background-color: white;
     }
     th {
       background-color: #005baa;
@@ -72,226 +77,195 @@
       cursor: pointer;
     }
 
-    /* Modal */
+    /* MODAL */
     .modal {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       background: rgba(0,0,0,0.7);
+      z-index: 9999;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
     }
-    .modal.active {
+    .modal:target {
       display: flex;
     }
     .modal-content {
       position: relative;
-      max-width: 400px;
-      width: 90%;
+      max-width: 90%;
+      max-height: 90%;
       background: white;
       border-radius: 10px;
       padding: 10px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
-    .modal-content img {
+    .modal-img {
       max-width: 100%;
+      max-height: 80vh;
       border-radius: 10px;
-      height: auto;
     }
-    .close-btn {
+    .close {
       position: absolute;
-      top: -10px;
-      right: -10px;
+      top: 5px;
+      right: 10px;
       background: red;
       color: white;
-      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
       font-size: 20px;
-      cursor: pointer;
-      line-height: 1;
+      line-height: 20px;
     }
 
-    /* Responsive cards for small screens */
-    @media (max-width: 768px) {
+    /* VERSI KARTU untuk HP */
+    .cards-container {
+      display: none;
+      gap: 20px;
+      padding: 10px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid #ccc;
+    }
+    .card h3 {
+      margin: 5px 0;
+      font-size: 18px;
+      color: #005baa;
+    }
+    .card p {
+      margin: 2px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* RESPONSIF */
+    @media (max-width: 767px) {
+      /* Sembunyikan tabel, tampilkan kartu */
       table {
         display: none;
       }
-      .card-list {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+      .cards-container {
+        display: grid;
+        grid-template-columns: 1fr;
       }
-      .card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        padding: 15px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      .card img {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-        cursor: pointer;
-        border: 2px solid #ccc;
-      }
-      .card-info {
-        flex: 1;
-      }
-      .card-info h3 {
-        margin: 0 0 5px;
-        font-size: 1.1em;
-      }
-      .card-info p {
-        margin: 2px 0;
-        color: #555;
+      nav a {
+        display: block;
+        margin: 8px 0;
       }
     }
-
-    footer {
-      text-align: center;
-      background-color: #003f7f;
-      color: white;
-      padding: 15px 0;
-      margin-top: 30px;
+    @media (min-width: 768px) {
+      /* Tampilkan tabel, sembunyikan kartu */
+      .cards-container {
+        display: none;
+      }
+      nav a {
+        display: inline-block;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>SD Negeri Citeko 03</h1>
-    <p>Website Resmi Sekolah</p>
-  </header>
 
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="profil.html">Profil</a>
-    <a href="guru.html">Guru</a>
-    <a href="staf.html">Staf</a>
-    <a href="berita.html">Berita</a>
-    <a href="agenda.html">Agenda</a>
-    <a href="galeri.html">Galeri</a>
-    <a href="kontak.html">Kontak</a>
-  </nav>
+<header>
+  <h1>SD Negeri Citeko 03</h1>
+  <p>Website Resmi Sekolah</p>
+</header>
 
-  <main>
-    <section>
-      <h2>Daftar Guru</h2>
+<nav>
+  <a href="index.html">Beranda</a>
+  <a href="profil.html">Profil</a>
+  <a href="guru.html">Guru</a>
+  <a href="staf.html">Staf</a>
+  <a href="berita.html">Berita</a>
+  <a href="agenda.html">Agenda</a>
+  <a href="galeri.html">Galeri</a>
+  <a href="kontak.html">Kontak</a>
+</nav>
 
-      <!-- Tabel versi desktop -->
-      <table>
-        <thead>
-          <tr>
-            <th>Foto</th>
-            <th>Nama</th>
-            <th>Jabatan</th>
-            <th>Keterangan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" data-full="images/dewi.jpeg"></td>
-            <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
-            <td>Kepala Sekolah</td>
-            <td>Kepala Sekolah</td>
-          </tr>
-          <tr>
-            <td><img src="images/yanti.jpg" alt="Yanti" class="foto-guru" data-full="images/yanti.jpg"></td>
-            <td>YANTI PERMASIH, S.Pd</td>
-            <td>Guru</td>
-            <td>Guru Kelas II A</td>
-          </tr>
-          <!-- tambah guru lain sesuai kebutuhan -->
-        </tbody>
-      </table>
+<main>
+  <h2>Daftar Guru</h2>
 
-      <!-- Card list versi mobile -->
-      <div class="card-list">
-        <div class="card">
-          <img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" data-full="images/dewi.jpeg" />
-          <div class="card-info">
-            <h3>DEWI REXAR GIRI KUSUMAH, M.Pd</h3>
-            <p><strong>Jabatan:</strong> Kepala Sekolah</p>
-            <p>Kepala Sekolah</p>
+  <!-- TABEL (desktop/tablet) -->
+  <table>
+    <thead>
+      <tr>
+        <th>Foto</th>
+        <th>Nama</th>
+        <th>Jabatan</th>
+        <th>Keterangan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="#foto-dewi">
+            <img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" />
+          </a>
+          <div class="modal" id="foto-dewi">
+            <a href="#" class="close">&times;</a>
+            <div class="modal-content">
+              <img src="images/dewi.jpeg" alt="Dewi" class="modal-img" />
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="images/yanti.jpg" alt="Yanti" class="foto-guru" data-full="images/yanti.jpg" />
-          <div class="card-info">
-            <h3>YANTI PERMASIH, S.Pd</h3>
-            <p><strong>Jabatan:</strong> Guru</p>
-            <p>Guru Kelas II A</p>
+        </td>
+        <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
+        <td>Kepala Sekolah</td>
+        <td>Kepala Sekolah</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#foto-yanti">
+            <img src="images/yanti.jpg" alt="Yanti" class="foto-guru" />
+          </a>
+          <div class="modal" id="foto-yanti">
+            <a href="#" class="close">&times;</a>
+            <div class="modal-content">
+              <img src="images/yanti.jpg" alt="Yanti" class="modal-img" />
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        </td>
+        <td>YANTI PERMASIH, S.Pd</td>
+        <td>Guru</td>
+        <td>Guru Kelas II A</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- Modal -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close-btn" aria-label="Tutup modal">&times;</button>
-      <img src="" alt="" id="modal-img" />
-    </div>
+  <!-- KARTU (mobile) -->
+  <div class="cards-container">
+    <a href="#foto-dewi" class="card">
+      <img src="images/dewi.jpeg" alt="Dewi" />
+      <h3>DEWI REXAR GIRI KUSUMAH, M.Pd</h3>
+      <p><strong>Jabatan:</strong> Kepala Sekolah</p>
+      <p><strong>Keterangan:</strong> Kepala Sekolah</p>
+    </a>
+    <a href="#foto-yanti" class="card">
+      <img src="images/yanti.jpg" alt="Yanti" />
+      <h3>YANTI PERMASIH, S.Pd</h3>
+      <p><strong>Jabatan:</strong> Guru</p>
+      <p><strong>Keterangan:</strong> Guru Kelas II A</p>
+    </a>
   </div>
 
-  <footer>
-    &copy; 2025 Guru Amatiran SD N Citeko 03
-  </footer>
+</main>
 
-  <script>
-    // Modal popup logic
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const closeBtn = modal.querySelector('.close-btn');
+<footer>
+  &copy; 2025 Guru Amatiran SD N Citeko 03
+</footer>
 
-    // Fungsi buka modal dengan gambar sesuai target
-    function openModal(imgSrc, imgAlt) {
-      modalImg.src = imgSrc;
-      modalImg.alt = imgAlt;
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-    }
-
-    // Tutup modal
-    function closeModal() {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImg.src = '';
-      modalImg.alt = '';
-    }
-
-    // Event klik pada gambar guru
-    document.querySelectorAll('.foto-guru').forEach(img => {
-      img.addEventListener('click', () => {
-        openModal(img.getAttribute('data-full'), img.alt);
-      });
-    });
-
-    // Event klik tombol close
-    closeBtn.addEventListener('click', closeModal);
-
-    // Tutup modal jika klik di luar modal content
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-
-    // Tutup modal dengan tombol ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
-    });
-  </script>
 </body>
 </html>
