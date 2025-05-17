@@ -4,6 +4,36 @@
     <meta charset="UTF-8">
     <title>Daftar Guru - SD Negeri Citeko 03</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 90%;
+        margin: 20px auto;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: middle;
+      }
+      th {
+        background-color: #0066cc;
+        color: white;
+      }
+      /* Styling untuk foto guru di dalam tabel */
+      .foto-guru {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      .nama-guru {
+        display: flex;
+        align-items: center;
+      }
+    </style>
 </head>
 <body>
     <header>
@@ -24,100 +54,44 @@
 
     <main>
        <section>
-    <h2>Daftar Guru</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Nama</th>
-                <th>Jabatan</th>
-                <th>Keterangan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
-                <td>Kepala Sekolah</td>
-                <td>Kepala Sekolah</td>
-            </tr>
-            <tr>
-                <td>YANTI PERMASIH, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas II a</td>
-            </tr>
-            <tr>
-                <td>PATRICIA OKTAVIANI, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas VI b</td>
-            </tr>
-            <tr>
-                <td>R. EMID MAHMUDIN, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas IV c</td>
-            </tr>
-            <tr>
-                <td>M. SAHLAN NAZARI, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas IV a</td>
-            </tr>
-            <tr>
-                <td>M. TUTI HERAWATI, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas I b</td>
-            </tr>
-            <tr>
-                <td>SINTIA FATMAH, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas V b</td>
-            </tr>
-            <tr>
-                <td>JUNISA FATHIR DINIYAH, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas I a</td>
-            </tr>
-            <tr>
-                <td>SITI NURHAYATI., S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas VI a</td>
-            </tr>
-            <tr>
-                <td>SITI PATONATU OCTAVIANA, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas VI b</td>
-            </tr>
-            <tr>
-                <td>DEDE NOVITA RAHMAN, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas III b</td>
-            </tr>
-            <tr>
-                <td>SITI FADILLA ARIANTI, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas III a</td>
-            </tr>
-            tr>
-                <td>EKA KUSUMA WARDANI, S.Pd</td>
-                <td>Guru</td>
-                <td>Guru Kelas II b</td>
-            </tr>
-            tr>
-                <td>SITI HODIJAH</td>
-                <td>Guru</td>
-                <td>Guru Kelas II c</td>
-            </tr>
-            tr>
-                <td>MUHAMAD IKBARUDIN</td>
-                <td>Guru</td>
-                <td>Guru PAIdB</td>
-            </tr>
-            tr>
-                <td>MUHAMAD RAMLAN</td>
-                <td>Guru</td>
-                <td>Guru Kelas V a</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-
+        <h2>Daftar Guru</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jabatan</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nama-guru">
+                      <img src="img/gambar1.png" alt="Dewi Rexar" class="foto-guru">
+                      DEWI REXAR GIRI KUSUMAH, M.Pd
+                    </td>
+                    <td>Kepala Sekolah</td>
+                    <td>Kepala Sekolah</td>
+                </tr>
+                <tr>
+                    <td class="nama-guru">
+                      <img src="images/yanti.jpg" alt="Yanti Permasih" class="foto-guru">
+                      YANTI PERMASIH, S.Pd
+                    </td>
+                    <td>Guru</td>
+                    <td>Guru Kelas II a</td>
+                </tr>
+                <tr>
+                    <td class="nama-guru">
+                      <img src="images/patricia.jpg" alt="Patricia Oktaviani" class="foto-guru">
+                      PATRICIA OKTAVIANI, S.Pd
+                    </td>
+                    <td>Guru</td>
+                    <td>Guru Kelas VI b</td>
+                </tr>
+                <!-- Tambahkan data guru lain dengan format yang sama -->
+            </tbody>
+        </table>
+       </section>
     </main>
 
     <footer>
