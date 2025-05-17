@@ -2,209 +2,166 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Daftar Guru - SD Negeri Citeko 03</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar Guru - SD Negeri Citeko 03</title>
   <style>
-    /* Reset & font */
+    /* Reset & dasar */
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       background-color: #f0f0f0;
       color: #333;
-      margin: 0;
-      padding: 0;
     }
-
-    /* HEADER */
     header {
       background-color: #2d00aa;
       color: white;
       text-align: center;
       padding: 20px 0;
     }
-
-    /* NAVBAR */
     nav {
       background-color: #003f7f;
-      padding: 10px 20px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 10px;
+      text-align: center;
     }
-
-    /* Hamburger button */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      width: 30px;
-      height: 21px;
-      justify-content: space-between;
-    }
-    .menu-toggle span {
-      background: white;
-      height: 3px;
-      border-radius: 3px;
-    }
-
-    /* Menu links */
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .menu a {
+    nav a {
       color: white;
       text-decoration: none;
+      margin: 0 10px;
       padding: 8px 12px;
       border-radius: 5px;
       transition: background-color 0.3s;
-      white-space: nowrap;
+      display: inline-block;
     }
-    .menu a:hover,
-    .menu a.active {
+    nav a:hover {
       background-color: #0073e6;
     }
-
-    /* TABLE WRAPPER */
-    .table-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin-top: 20px;
-    }
-
-    /* TABLE */
-    table {
-      width: 100%;
-      min-width: 600px;
-      border-collapse: collapse;
+    main {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 20px;
       background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
+    /* Tabel responsif - disembunyikan di layar kecil */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
     th, td {
-      padding: 8px 12px;
       border: 1px solid #ccc;
+      padding: 10px;
       text-align: left;
       vertical-align: middle;
-      color: black;
-      word-break: break-word;
     }
-
     th {
       background-color: #005baa;
       color: white;
     }
-
     .foto-guru {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #ccc;
       cursor: pointer;
-      transition: border-color 0.3s;
-    }
-    .foto-guru:hover {
-      border-color: #005baa;
     }
 
-    /* MODAL */
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 9999;
-      align-items: center;
+      background: rgba(0,0,0,0.7);
       justify-content: center;
-      padding: 1em;
+      align-items: center;
+      z-index: 9999;
     }
-    .modal:target {
+    .modal.active {
       display: flex;
     }
     .modal-content {
       position: relative;
       max-width: 400px;
-      width: 100%;
+      width: 90%;
       background: white;
       border-radius: 10px;
+      padding: 10px;
       text-align: center;
-      padding: 1em;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
-    .modal-img {
+    .modal-content img {
       max-width: 100%;
-      height: auto;
       border-radius: 10px;
+      height: auto;
     }
-    .close {
+    .close-btn {
       position: absolute;
       top: -10px;
       right: -10px;
       background: red;
       color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 5px 10px;
+      border: none;
       border-radius: 50%;
+      width: 30px;
+      height: 30px;
       font-size: 20px;
-      line-height: 1;
       cursor: pointer;
+      line-height: 1;
     }
 
-    /* MAIN CONTENT */
-    main {
-      max-width: 960px;
-      margin: 20px auto;
-      padding: 0 20px 40px;
+    /* Responsive cards for small screens */
+    @media (max-width: 768px) {
+      table {
+        display: none;
+      }
+      .card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .card img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid #ccc;
+      }
+      .card-info {
+        flex: 1;
+      }
+      .card-info h3 {
+        margin: 0 0 5px;
+        font-size: 1.1em;
+      }
+      .card-info p {
+        margin: 2px 0;
+        color: #555;
+      }
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       background-color: #003f7f;
       color: white;
       padding: 15px 0;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-        background-color: #003f7f;
-        border-radius: 5px;
-      }
-      .menu.show {
-        display: flex;
-      }
-      .menu a {
-        padding: 10px 15px;
-        border-top: 1px solid rgba(255,255,255,0.2);
-      }
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .foto-guru {
-        width: 40px;
-        height: 40px;
-      }
-      th, td {
-        padding: 6px 8px;
-        font-size: 14px;
-      }
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -215,93 +172,124 @@
   </header>
 
   <nav>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="menu" id="menu">
-      <a href="index.html">Beranda</a>
-      <a href="profil.html">Profil</a>
-      <a href="guru.html" class="active">Guru</a>
-      <a href="staf.html">Staf</a>
-      <a href="berita.html">Berita</a>
-      <a href="agenda.html">Agenda</a>
-      <a href="galeri.html">Galeri</a>
-      <a href="kontak.html">Kontak</a>
-    </div>
+    <a href="index.html">Beranda</a>
+    <a href="profil.html">Profil</a>
+    <a href="guru.html">Guru</a>
+    <a href="staf.html">Staf</a>
+    <a href="berita.html">Berita</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="kontak.html">Kontak</a>
   </nav>
 
   <main>
     <section>
       <h2>Daftar Guru</h2>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Foto</th>
-              <th>Nama</th>
-              <th>Jabatan</th>
-              <th>Keterangan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#foto-dewi">
-                  <img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" />
-                </a>
-                <div class="modal" id="foto-dewi">
-                  <a href="#" class="close" title="Tutup">&times;</a>
-                  <div class="modal-content">
-                    <img src="images/dewi.jpeg" alt="Dewi" class="modal-img" />
-                  </div>
-                </div>
-              </td>
-              <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
-              <td>Kepala Sekolah</td>
-              <td>Kepala Sekolah</td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#foto-yanti">
-                  <img src="images/yanti.jpg" alt="Yanti" class="foto-guru" />
-                </a>
-                <div class="modal" id="foto-yanti">
-                  <a href="#" class="close" title="Tutup">&times;</a>
-                  <div class="modal-content">
-                    <img src="images/yanti.jpg" alt="Yanti" class="modal-img" />
-                  </div>
-                </div>
-              </td>
-              <td>YANTI PERMASIH, S.Pd</td>
-              <td>Guru</td>
-              <td>Guru Kelas II A</td>
-            </tr>
-          </tbody>
-        </table>
+
+      <!-- Tabel versi desktop -->
+      <table>
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" data-full="images/dewi.jpeg"></td>
+            <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
+            <td>Kepala Sekolah</td>
+            <td>Kepala Sekolah</td>
+          </tr>
+          <tr>
+            <td><img src="images/yanti.jpg" alt="Yanti" class="foto-guru" data-full="images/yanti.jpg"></td>
+            <td>YANTI PERMASIH, S.Pd</td>
+            <td>Guru</td>
+            <td>Guru Kelas II A</td>
+          </tr>
+          <!-- tambah guru lain sesuai kebutuhan -->
+        </tbody>
+      </table>
+
+      <!-- Card list versi mobile -->
+      <div class="card-list">
+        <div class="card">
+          <img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" data-full="images/dewi.jpeg" />
+          <div class="card-info">
+            <h3>DEWI REXAR GIRI KUSUMAH, M.Pd</h3>
+            <p><strong>Jabatan:</strong> Kepala Sekolah</p>
+            <p>Kepala Sekolah</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/yanti.jpg" alt="Yanti" class="foto-guru" data-full="images/yanti.jpg" />
+          <div class="card-info">
+            <h3>YANTI PERMASIH, S.Pd</h3>
+            <p><strong>Jabatan:</strong> Guru</p>
+            <p>Guru Kelas II A</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-btn" aria-label="Tutup modal">&times;</button>
+      <img src="" alt="" id="modal-img" />
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 Guru Amatiran SD N Citeko 03
   </footer>
 
   <script>
-    // Toggle menu hamburger (JS kecil dan simpel)
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+    // Modal popup logic
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = modal.querySelector('.close-btn');
 
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
+    // Fungsi buka modal dengan gambar sesuai target
+    function openModal(imgSrc, imgAlt) {
+      modalImg.src = imgSrc;
+      modalImg.alt = imgAlt;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    // Tutup modal
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Event klik pada gambar guru
+    document.querySelectorAll('.foto-guru').forEach(img => {
+      img.addEventListener('click', () => {
+        openModal(img.getAttribute('data-full'), img.alt);
+      });
     });
 
-    // Biar bisa toggle dengan keyboard (Enter/Space)
-    menuToggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        menu.classList.toggle('show');
+    // Event klik tombol close
+    closeBtn.addEventListener('click', closeModal);
+
+    // Tutup modal jika klik di luar modal content
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Tutup modal dengan tombol ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
       }
     });
   </script>
