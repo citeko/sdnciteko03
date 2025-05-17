@@ -4,86 +4,139 @@
   <meta charset="UTF-8" />
   <title>Daftar Guru - SD Negeri Citeko 03</title>
   <link rel="stylesheet" href="css/style.css" />
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
+  <style>
+    /* TABEL */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: white;
+    }
 
-  th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-    vertical-align: middle;
-  }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      vertical-align: middle;
+      color: black; /* pastikan tulisan hitam */
+      background-color: white; /* pastikan latar putih */
+    }
 
-  th {
-    background-color: #f2f2f2;
-  }
+    th {
+      background-color: #005baa;
+      color: white;
+    }
 
-  td {
-    color: #000 !important;
-  }
+    .foto-guru {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
 
-  .foto-guru {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ccc;
-    cursor: pointer;
-  }
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
+    }
 
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: 9999;
-  }
+    .modal:target {
+      display: block;
+    }
 
-  .modal:target {
-    display: block;
-  }
+    .modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      margin: 10% auto;
+      padding: 1em;
+      background: white;
+      border-radius: 10px;
+      text-align: center;
+    }
 
-  .modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 400px;
-    margin: 10% auto;
-    padding: 1em;
-    background: white;
-    border-radius: 10px;
-    text-align: center;
-  }
+    .modal-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
 
-  .modal-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
+    .close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: red;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
 
-  .close {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 50%;
-  }
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
 
-  .overlay {
-    position: fixed;
-    width: 100%; height: 100%;
-    top: 0; left: 0;
-  }
-</style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 0;
+      margin: 0;
+    }
 
+    header {
+      background-color: #2d00aa;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav {
+      background-color: #003f7f;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #0073e6;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      background-color: #003f7f;
+      color: white;
+      padding: 15px 0;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -116,24 +169,27 @@
         </thead>
         <tbody>
           <tr>
-  <td>
-    <a href="#foto-dewi"><img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" /></a>
-    <div class="modal" id="foto-dewi">
-      <a href="#" class="overlay"></a>
-      <div class="modal-content">
-        <img src="images/dewi.jpeg" alt="Dewi" class="modal-img" />
-        <a href="#" class="close">&times;</a>
-      </div>
-    </div>
-  </td>
-  <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
-  <td>Kepala Sekolah</td>
-  <td>Kepala Sekolah</td>
-</tr>
-          <!-- Tambahkan baris guru lainnya dengan struktur yang sama -->
+            <td>
+              <a href="#foto-dewi">
+                <img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" />
+              </a>
+              <div class="modal" id="foto-dewi">
+                <a href="#" class="overlay"></a>
+                <div class="modal-content">
+                  <img src="images/dewi.jpeg" alt="Dewi" class="modal-img" />
+                  <a href="#" class="close">&times;</a>
+                </div>
+              </div>
+            </td>
+            <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
+            <td>Kepala Sekolah</td>
+            <td>Kepala Sekolah</td>
+          </tr>
           <tr>
             <td>
-              <a href="#foto-yanti"><img src="images/yanti.jpg" alt="Yanti" class="foto-guru" /></a>
+              <a href="#foto-yanti">
+                <img src="images/yanti.jpg" alt="Yanti" class="foto-guru" />
+              </a>
               <div class="modal" id="foto-yanti">
                 <a href="#" class="overlay"></a>
                 <div class="modal-content">
@@ -144,9 +200,8 @@
             </td>
             <td>YANTI PERMASIH, S.Pd</td>
             <td>Guru</td>
-            <td>Guru Kelas II a</td>
+            <td>Guru Kelas II A</td>
           </tr>
-          <!-- Tambahkan guru lainnya sesuai kebutuhan -->
         </tbody>
       </table>
     </section>
