@@ -1,35 +1,131 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Beranda - SD Negeri Citeko 03</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beranda - SD Negeri Citeko 03</title>
+  <style>
+    /* Reset & font */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #0066cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #f2f2f2;
+      position: relative;
+    }
+    /* Navbar container */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      gap: 10px;
+    }
+    /* Link styles */
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #ddd;
+    }
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: #333;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    footer {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+      }
+      .navbar.active {
+        display: flex;
+      }
+      .navbar a {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        padding: 12px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>SD Negeri Citeko 03</h1>
-        <p>Website Resmi Sekolah</p>
-    </header>
-    <nav>
-        <a href="index.html">Beranda</a>
-        <a href="profil.html">Profil</a>
-        <a href="guru.html">Guru</a>
-        <a href="staf.html">Staf</a>
-        <a href="berita.html">Berita</a>
-        <a href="agenda.html">Agenda</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="kontak.html">Kontak</a>
-    </nav>
-    <main>
-        <section>
-            <h2>Selamat Datang</h2>
-            <p>Website ini menyajikan informasi tentang berbagai kegiatan sekolah, guru, staf, dan pengumuman-pengumuman terbaru</p>
-            <p>Semoga dengan hadirnya website ini, SD N Citeko 03 menjadi sekolah yang mampu mengakomodir kebutuhan Pendidikan warga sekitar.</p>
-        </section>
-    </main>
-    <footer>
-        &copyright; 2025 Guru Amatiran SD N Citeko 03
-        Website ini sedang dalam tahap penyempurnaan
-    </footer>
+  <header>
+    <h1>SD Negeri Citeko 03</h1>
+    <p>Website Resmi Sekolah</p>
+  </header>
+
+  <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="navbar" id="navbar">
+      <a href="index.html" class="active">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="guru.html">Guru</a>
+      <a href="staf.html">Staf</a>
+      <a href="berita.html">Berita</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html">Kontak</a>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Selamat Datang</h2>
+      <p>Website ini menyajikan informasi tentang berbagai kegiatan sekolah, guru, staf, dan pengumuman-pengumuman terbaru</p>
+      <p>Semoga dengan hadirnya website ini, SD N Citeko 03 menjadi sekolah yang mampu mengakomodir kebutuhan Pendidikan warga sekitar.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Guru Amatiran SD N Citeko 03<br />
+    Website ini sedang dalam tahap penyempurnaan
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
