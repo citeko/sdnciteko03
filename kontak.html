@@ -4,47 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontak - SD Negeri Citeko 03</title>
-  <link rel="stylesheet" href="css/style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
+
     header, footer {
       background-color: #0066cc;
       color: white;
       padding: 20px;
       text-align: center;
     }
-   nav {
-  background-color: #f2f2f2;
-  padding: 10px 0;
-}
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
+    /* NAVBAR STYLES */
+    nav {
+      background-color: #f2f2f2;
+    }
 
-.navbar a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+    }
 
-.navbar a:hover {
-  background-color: #ddd;
-}
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+    }
 
     main {
       padding: 20px;
     }
+
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -53,16 +57,19 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     label, input, textarea {
       display: block;
       width: 100%;
       margin-bottom: 10px;
     }
+
     input, textarea {
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+
     button {
       padding: 10px 15px;
       background-color: #0066cc;
@@ -71,40 +78,41 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #004999;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>SD Negeri Citeko 03</h1>
     <p>Website Resmi Sekolah</p>
   </header>
 
+  <!-- NAVBAR -->
   <nav>
-  <div class="navbar">
-    <a href="index.html">Beranda</a>
-    <a href="profil.html">Profil</a>
-    <a href="guru.html">Guru</a>
-    <a href="staf.html">Staf</a>
-    <a href="berita.html">Berita</a>
-    <a href="agenda.html">Agenda</a>
-    <a href="galeri.html">Galeri</a>
-    <a href="kontak.html">Kontak</a>
-  </div>
-</nav>
+    <div class="navbar">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="guru.html">Guru</a>
+      <a href="staf.html">Staf</a>
+      <a href="berita.html">Berita</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html">Kontak</a>
+    </div>
+  </nav>
 
   <main>
     <section>
       <h2>Kontak Kami</h2>
       <form action="https://formsubmit.co/nurindahwita@gmail.com" method="POST">
-        <!-- Hidden configs -->
         <input type="hidden" name="_captcha" value="false">
-       <input type="hidden" name="_next" value="https://citeko.github.io/sdnciteko03/terimakasih.html">
+        <input type="hidden" name="_next" value="https://citeko.github.io/sdnciteko03/terimakasih.html">
         <input type="hidden" name="_template" value="table">
 
-        <!-- Form fields -->
         <label for="name">Nama:</label>
         <input type="text" id="name" name="name" required>
 
@@ -122,5 +130,6 @@
   <footer>
     &copy; 2025 Guru Amatiran From SD N Citeko 03
   </footer>
+
 </body>
 </html>
