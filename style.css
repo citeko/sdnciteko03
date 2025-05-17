@@ -101,11 +101,6 @@ th, td {
     text-align: left;
 }
 
-th {
-    background-color: #005baa;
-    color: blue;
-}
-
 .galeri-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
