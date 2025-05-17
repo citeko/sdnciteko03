@@ -2,140 +2,144 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daftar Guru - SD Negeri Citeko 03</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* Reset dasar */
-    * {
-      box-sizing: border-box;
-    }
+    /* Reset & font */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f0f0f0;
+      background-color: #f0f0f0;
       color: #333;
+      margin: 0;
+      padding: 0;
     }
-    header, footer {
+
+    /* HEADER */
+    header {
       background-color: #2d00aa;
       color: white;
       text-align: center;
-      padding: 20px 10px;
-    }
-    header h1, header p {
-      margin: 0;
-      line-height: 1.2;
+      padding: 20px 0;
     }
 
     /* NAVBAR */
     nav {
       background-color: #003f7f;
+      padding: 10px 20px;
       position: relative;
-    }
-    nav .nav-container {
-      max-width: 960px;
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 15px;
+      flex-wrap: wrap;
     }
-    nav .nav-links {
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 21px;
+      justify-content: space-between;
+    }
+    .menu-toggle span {
+      background: white;
+      height: 3px;
+      border-radius: 3px;
+    }
+
+    /* Menu links */
+    .menu {
       display: flex;
-      gap: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    nav .nav-links a {
+
+    .menu a {
       color: white;
       text-decoration: none;
-      padding: 8px 14px;
+      padding: 8px 12px;
       border-radius: 5px;
-      font-weight: 600;
       transition: background-color 0.3s;
       white-space: nowrap;
     }
-    nav .nav-links a:hover,
-    nav .nav-links a.active {
+    .menu a:hover,
+    .menu a.active {
       background-color: #0073e6;
     }
 
-    /* Hamburger toggle button */
-    nav .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 28px;
-      height: 22px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    nav .menu-toggle span {
-      display: block;
-      height: 3px;
-      background: white;
-      border-radius: 2px;
-    }
-
-    /* MAIN */
-    main {
-      max-width: 960px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* TABLE WRAPPER */
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 20px;
     }
 
     /* TABLE */
     table {
       width: 100%;
+      min-width: 600px;
       border-collapse: collapse;
-      margin-top: 20px;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     th, td {
-      padding: 10px;
+      padding: 8px 12px;
       border: 1px solid #ccc;
       text-align: left;
-      background: white;
+      vertical-align: middle;
       color: black;
+      word-break: break-word;
     }
+
     th {
       background-color: #005baa;
       color: white;
     }
+
     .foto-guru {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #ccc;
       cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    .foto-guru:hover {
+      border-color: #005baa;
     }
 
     /* MODAL */
     .modal {
       display: none;
       position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
       z-index: 9999;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: 1em;
     }
     .modal:target {
       display: flex;
     }
     .modal-content {
+      position: relative;
+      max-width: 400px;
+      width: 100%;
       background: white;
       border-radius: 10px;
-      padding: 10px;
-      max-width: 400px;
-      width: 90%;
-      position: relative;
       text-align: center;
+      padding: 1em;
     }
     .modal-img {
-      width: 100%;
+      max-width: 100%;
+      height: auto;
       border-radius: 10px;
     }
     .close {
@@ -148,113 +152,135 @@
       font-weight: bold;
       padding: 5px 10px;
       border-radius: 50%;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
     }
-    .overlay {
-      position: fixed;
-      inset: 0;
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 0 20px 40px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      background-color: #003f7f;
+      color: white;
+      padding: 15px 0;
+      margin-top: 40px;
+      font-size: 14px;
     }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav .nav-links {
-        position: absolute;
-        top: 52px;
-        left: 0;
-        right: 0;
-        background-color: #003f7f;
-        flex-direction: column;
+      .menu {
         display: none;
-        z-index: 10;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        background-color: #003f7f;
+        border-radius: 5px;
       }
-      nav .nav-links.active {
+      .menu.show {
         display: flex;
       }
-      nav .nav-links a {
-        padding: 12px 15px;
-        border-top: 1px solid #005baa;
+      .menu a {
+        padding: 10px 15px;
+        border-top: 1px solid rgba(255,255,255,0.2);
       }
-      nav .menu-toggle {
+      .menu-toggle {
         display: flex;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .foto-guru {
+        width: 40px;
+        height: 40px;
+      }
+      th, td {
+        padding: 6px 8px;
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>SD Negeri Citeko 03</h1>
     <p>Website Resmi Sekolah</p>
   </header>
 
   <nav>
-    <div class="nav-container">
-      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Beranda</a>
-        <a href="profil.html">Profil</a>
-        <a href="guru.html" class="active">Guru</a>
-        <a href="staf.html">Staf</a>
-        <a href="berita.html">Berita</a>
-        <a href="agenda.html">Agenda</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="kontak.html">Kontak</a>
-      </div>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="guru.html" class="active">Guru</a>
+      <a href="staf.html">Staf</a>
+      <a href="berita.html">Berita</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html">Kontak</a>
     </div>
   </nav>
 
   <main>
     <section>
       <h2>Daftar Guru</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Foto</th>
-            <th>Nama</th>
-            <th>Jabatan</th>
-            <th>Keterangan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <a href="#foto-dewi">
-                <img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" />
-              </a>
-              <div class="modal" id="foto-dewi">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content">
-                  <img src="images/dewi.jpeg" alt="Dewi" class="modal-img" />
-                  <a href="#" class="close">&times;</a>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nama</th>
+              <th>Jabatan</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="#foto-dewi">
+                  <img src="images/dewi.jpeg" alt="Dewi" class="foto-guru" />
+                </a>
+                <div class="modal" id="foto-dewi">
+                  <a href="#" class="close" title="Tutup">&times;</a>
+                  <div class="modal-content">
+                    <img src="images/dewi.jpeg" alt="Dewi" class="modal-img" />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
-            <td>Kepala Sekolah</td>
-            <td>Kepala Sekolah</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="#foto-yanti">
-                <img src="images/yanti.jpg" alt="Yanti" class="foto-guru" />
-              </a>
-              <div class="modal" id="foto-yanti">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content">
-                  <img src="images/yanti.jpg" alt="Yanti" class="modal-img" />
-                  <a href="#" class="close">&times;</a>
+              </td>
+              <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
+              <td>Kepala Sekolah</td>
+              <td>Kepala Sekolah</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#foto-yanti">
+                  <img src="images/yanti.jpg" alt="Yanti" class="foto-guru" />
+                </a>
+                <div class="modal" id="foto-yanti">
+                  <a href="#" class="close" title="Tutup">&times;</a>
+                  <div class="modal-content">
+                    <img src="images/yanti.jpg" alt="Yanti" class="modal-img" />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>YANTI PERMASIH, S.Pd</td>
-            <td>Guru</td>
-            <td>Guru Kelas II A</td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td>YANTI PERMASIH, S.Pd</td>
+              <td>Guru</td>
+              <td>Guru Kelas II A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
 
@@ -263,10 +289,21 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');
-    }
+    // Toggle menu hamburger (JS kecil dan simpel)
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    // Biar bisa toggle dengan keyboard (Enter/Space)
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      }
+    });
   </script>
 </body>
 </html>
