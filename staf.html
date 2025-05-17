@@ -1,148 +1,154 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<title>Staf Sekolah - SD Negeri Citeko 03</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0; padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  header {
-    background-color: #2d00aa;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  nav {
-    background-color: #003f7f;
-    padding: 10px 0;
-    text-align: center;
-  }
-  nav a {
-    color: white;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 14px;
-    border-radius: 4px;
-  }
-  nav a:hover, nav a.active {
-    background-color: #005bbb;
-  }
-  main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 15px 40px;
-  }
-  h2 {
-    margin-bottom: 20px;
-    color: #2d00aa;
-    text-align: center;
-  }
+  <meta charset="UTF-8" />
+  <title>Staf Sekolah - SD Negeri Citeko 03</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* NAVBAR */
+    nav {
+      background-color: #003f7f;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+    nav a:hover {
+      background-color: #0073e6;
+    }
+    /* RESPONSIVE NAVBAR FOR MOBILE */
+    @media (max-width: 767px) {
+      nav {
+        text-align: left;
+        padding: 10px 15px;
+      }
+      nav a {
+        display: block;
+        margin: 8px 0;
+        padding: 10px 15px;
+        font-size: 18px;
+      }
+    }
 
-  /* Container kartu staf */
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
+    /* TABLE STYLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      vertical-align: middle;
+      color: #333;
+      background-color: white;
+    }
+    th {
+      background-color: #005baa;
+      color: white;
+    }
 
-  /* Kartu staf */
-  .card {
-    background-color: white;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s;
-  }
-  .card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-  .card h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    color: #005baa;
-  }
-  .card p {
-    margin: 6px 0;
-    font-size: 14px;
-  }
-  .card .jabatan {
-    font-weight: bold;
-    color: #333;
-  }
-  .card .keterangan {
-    font-style: italic;
-    color: #666;
-  }
-
-  footer {
-    text-align: center;
-    background-color: #003f7f;
-    color: white;
-    padding: 14px 0;
-    font-size: 14px;
-  }
-</style>
+    /* LAYOUT */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2d00aa;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      background-color: #003f7f;
+      color: white;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>SD Negeri Citeko 03</h1>
+    <p>Website Resmi Sekolah</p>
+  </header>
 
-<header>
-  <h1>SD Negeri Citeko 03</h1>
-  <p>Website Resmi Sekolah</p>
-</header>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="profil.html">Profil</a>
+    <a href="guru.html">Guru</a>
+    <a href="staf.html">Staf</a>
+    <a href="berita.html">Berita</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
 
-<nav>
-  <a href="index.html">Beranda</a>
-  <a href="profil.html">Profil</a>
-  <a href="guru.html">Guru</a>
-  <a href="staf.html" class="active">Staf</a>
-  <a href="berita.html">Berita</a>
-  <a href="agenda.html">Agenda</a>
-  <a href="galeri.html">Galeri</a>
-  <a href="kontak.html">Kontak</a>
-</nav>
+  <main>
+    <section>
+      <h2>Daftar Staf Sekolah</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M. SAHLAN NAZARI, S.Pd</td>
+            <td>Staf</td>
+            <td>Operator BOSP</td>
+          </tr>
+          <tr>
+            <td>MUHAMAD RAMLAN</td>
+            <td>Staf</td>
+            <td>Operator DAPODIK</td>
+          </tr>
+          <tr>
+            <td>TARSIDIN</td>
+            <td>Staf</td>
+            <td>Penjaga Sekolah</td>
+          </tr>
+          <tr>
+            <td>TARSIDIN</td>
+            <td>Staf</td>
+            <td>Petugas Kebersihan</td>
+          </tr>
+          <tr>
+            <td>TARSIDIN</td>
+            <td>Staf</td>
+            <td>Pembantu Umum</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-<main>
-  <section>
-    <h2>Daftar Staf Sekolah</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>M. SAHLAN NAZARI, S.Pd</h3>
-        <p class="jabatan">Staf</p>
-        <p class="keterangan">Operator BOSP</p>
-      </div>
-      <div class="card">
-        <h3>MUHAMAD RAMLAN</h3>
-        <p class="jabatan">Staf</p>
-        <p class="keterangan">Operator DAPODIK</p>
-      </div>
-      <div class="card">
-        <h3>TARSIDIN</h3>
-        <p class="jabatan">Staf</p>
-        <p class="keterangan">Penjaga Sekolah</p>
-      </div>
-      <div class="card">
-        <h3>TARSIDIN</h3>
-        <p class="jabatan">Staf</p>
-        <p class="keterangan">Petugas Kebersihan</p>
-      </div>
-      <div class="card">
-        <h3>TARSIDIN</h3>
-        <p class="jabatan">Staf</p>
-        <p class="keterangan">Pembantu Umum</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Guru Amatiran From SD N Citeko 03
-</footer>
-
+  <footer>
+    &copy; 2025 Guru Amatiran From SD N Citeko 03
+  </footer>
 </body>
 </html>
