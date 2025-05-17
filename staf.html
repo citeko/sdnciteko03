@@ -1,9 +1,143 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Staf Sekolah - SD Negeri Citeko 03</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        /* Reset & font */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0; padding: 0;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #2d00aa;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #003f7f;
+            padding: 10px 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* Hamburger button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 21px;
+            justify-content: space-between;
+        }
+        .menu-toggle span {
+            background: white;
+            height: 3px;
+            border-radius: 3px;
+        }
+
+        /* Menu links */
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+        .menu a:hover,
+        .menu a.active {
+            background-color: #0073e6;
+        }
+
+        /* TABLE WRAPPER */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 20px;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            min-width: 400px;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+            vertical-align: middle;
+            color: black;
+            word-break: break-word;
+        }
+
+        th {
+            background-color: #005baa;
+            color: white;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px 40px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            background-color: #003f7f;
+            color: white;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+                background-color: #003f7f;
+                border-radius: 5px;
+            }
+            .menu.show {
+                display: flex;
+            }
+            .menu a {
+                padding: 10px 15px;
+                border-top: 1px solid rgba(255,255,255,0.2);
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,57 +146,87 @@
     </header>
 
     <nav>
-        <a href="index.html">Beranda</a>
-        <a href="profil.html">Profil</a>
-        <a href="guru.html">Guru</a>
-        <a href="staf.html">Staf</a>
-        <a href="berita.html">Berita</a>
-        <a href="agenda.html">Agenda</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="kontak.html">Kontak</a>
+        <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu" id="menu">
+            <a href="index.html">Beranda</a>
+            <a href="profil.html">Profil</a>
+            <a href="guru.html">Guru</a>
+            <a href="staf.html" class="active">Staf</a>
+            <a href="berita.html">Berita</a>
+            <a href="agenda.html">Agenda</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="kontak.html">Kontak</a>
+        </div>
     </nav>
 
     <main>
         <section>
             <h2>Daftar Staf Sekolah</h2>
-            <table>
-                
-                <tr>
-                    <th>Nama</th>
-                    <th>Jabatan</th>
-                    <th>Keterangan</th>
-                </tr>
-                <tr>
-                    <td>M. SAHLAN NAZARI, S.Pd</td>
-                    <td>Staf</td>
-                    <td>Operator BOSP</td>
-                </tr>
-                <tr>
-                    <td>MUHAMAD RAMLAN</td>
-                    <td>Staf</td>
-                    <td>Operator DAPODIK</td>
-                </tr>
-                <tr>
-                    <td>TARSIDIN</td>
-                    <td>Staf</td>
-                    <td>Penjaga Sekolah</td>
-                </tr>
-                <tr>
-                    <td>TARSIDIN</td>
-                    <td>Staf</td>
-                    <td>Ptugas Kebersihan</td>
-                </tr>
-                <tr>
-                    <td>TARSIDIN</td>
-                    <td>Staf</td>
-                    <td>Pembantu Umum</td>
-                </tr>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Jabatan</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>M. SAHLAN NAZARI, S.Pd</td>
+                            <td>Staf</td>
+                            <td>Operator BOSP</td>
+                        </tr>
+                        <tr>
+                            <td>MUHAMAD RAMLAN</td>
+                            <td>Staf</td>
+                            <td>Operator DAPODIK</td>
+                        </tr>
+                        <tr>
+                            <td>TARSIDIN</td>
+                            <td>Staf</td>
+                            <td>Penjaga Sekolah</td>
+                        </tr>
+                        <tr>
+                            <td>TARSIDIN</td>
+                            <td>Staf</td>
+                            <td>Petugas Kebersihan</td>
+                        </tr>
+                        <tr>
+                            <td>TARSIDIN</td>
+                            <td>Staf</td>
+                            <td>Pembantu Umum</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
     <footer>
         &copy; 2025 Guru Amatiran From SD N Citeko 03
     </footer>
+
+    <script>
+        // Toggle menu hamburger (JS kecil dan simpel)
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+
+        // Biar bisa toggle dengan keyboard (Enter/Space)
+        menuToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                menu.classList.toggle('show');
+            }
+        });
+    </script>
 </body>
 </html>
