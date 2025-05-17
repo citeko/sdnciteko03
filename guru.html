@@ -1,194 +1,155 @@
-<tbody>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-dewi"><img src="images/dewi.jpg" alt="Dewi Rexar" class="foto-guru"></a>
-            DEWI REXAR GIRI KUSUMAH, M.Pd
-            <div class="modal" id="foto-dewi">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daftar Guru - SD Negeri Citeko 03</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .foto-guru {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+
+    /* Modal popup */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+    }
+
+    .modal:target {
+      display: block;
+    }
+
+    .modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      margin: 10% auto;
+      padding: 1em;
+      background: white;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .modal-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: red;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+
+    .overlay {
+      position: fixed;
+      width: 100%; height: 100%;
+      top: 0; left: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SD Negeri Citeko 03</h1>
+    <p>Website Resmi Sekolah</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="profil.html">Profil</a>
+    <a href="guru.html">Guru</a>
+    <a href="staf.html">Staf</a>
+    <a href="berita.html">Berita</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Daftar Guru</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="#foto-dewi"><img src="images/dewi.jpg" alt="Dewi" class="foto-guru" /></a>
+              <div class="modal" id="foto-dewi">
                 <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="img/gambar1.png" alt="Dewi Rexar" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Kepala Sekolah</td>
-        <td>Kepala Sekolah</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-yanti"><img src="images/yanti.jpg" alt="Yanti Permasih" class="foto-guru"></a>
-            YANTI PERMASIH, S.Pd
-            <div class="modal" id="foto-yanti">
+                <div class="modal-content">
+                  <img src="images/dewi.jpg" alt="Dewi" class="modal-img" />
+                  <a href="#" class="close">&times;</a>
+                </div>
+              </div>
+            </td>
+            <td>DEWI REXAR GIRI KUSUMAH, M.Pd</td>
+            <td>Kepala Sekolah</td>
+            <td>Kepala Sekolah</td>
+          </tr>
+          <!-- Tambahkan baris guru lainnya dengan struktur yang sama -->
+          <tr>
+            <td>
+              <a href="#foto-yanti"><img src="images/yanti.jpg" alt="Yanti" class="foto-guru" /></a>
+              <div class="modal" id="foto-yanti">
                 <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/yanti.jpg" alt="Yanti Permasih" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas II a</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-patricia"><img src="images/patricia.jpg" alt="Patricia Oktaviani" class="foto-guru"></a>
-            PATRICIA OKTAVIANI, S.Pd
-            <div class="modal" id="foto-patricia">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/patricia.jpg" alt="Patricia Oktaviani" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas VI b</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-emid"><img src="images/emid.jpg" alt="R. Emid Mahmudin" class="foto-guru"></a>
-            R. EMID MAHMUDIN, S.Pd
-            <div class="modal" id="foto-emid">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/emid.jpg" alt="R. Emid Mahmudin" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas IV c</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-sahlan"><img src="images/sahlan.jpg" alt="M. Sahlan Nazari" class="foto-guru"></a>
-            M. SAHLAN NAZARI, S.Pd
-            <div class="modal" id="foto-sahlan">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/sahlan.jpg" alt="M. Sahlan Nazari" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas IV a</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-tuti"><img src="images/tuti.jpg" alt="M. Tuti Herawati" class="foto-guru"></a>
-            M. TUTI HERAWATI, S.Pd
-            <div class="modal" id="foto-tuti">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/tuti.jpg" alt="M. Tuti Herawati" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas I b</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-sintia"><img src="images/sintia.jpg" alt="Sintia Fatmah" class="foto-guru"></a>
-            SINTIA FATMAH, S.Pd
-            <div class="modal" id="foto-sintia">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/sintia.jpg" alt="Sintia Fatmah" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas V b</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-junisa"><img src="images/junisa.jpg" alt="Junisa Fathir" class="foto-guru"></a>
-            JUNISA FATHIR DINIYAH, S.Pd
-            <div class="modal" id="foto-junisa">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/junisa.jpg" alt="Junisa Fathir" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas I a</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-nurhayati"><img src="images/nurhayati.jpg" alt="Siti Nurhayati" class="foto-guru"></a>
-            SITI NURHAYATI., S.Pd
-            <div class="modal" id="foto-nurhayati">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/nurhayati.jpg" alt="Siti Nurhayati" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas VI a</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-patonatu"><img src="images/patonatu.jpg" alt="Siti Patonatu" class="foto-guru"></a>
-            SITI PATONATU OCTAVIANA, S.Pd
-            <div class="modal" id="foto-patonatu">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/patonatu.jpg" alt="Siti Patonatu" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas VI b</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-dede"><img src="images/dede.jpg" alt="Dede Novita" class="foto-guru"></a>
-            DEDE NOVITA RAHMAN, S.Pd
-            <div class="modal" id="foto-dede">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/dede.jpg" alt="Dede Novita" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas III b</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-fadilla"><img src="images/fadilla.jpg" alt="Siti Fadilla" class="foto-guru"></a>
-            SITI FADILLA ARIANTI, S.Pd
-            <div class="modal" id="foto-fadilla">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/fadilla.jpg" alt="Siti Fadilla" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas III a</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-eka"><img src="images/eka.jpg" alt="Eka Kusuma" class="foto-guru"></a>
-            EKA KUSUMA WARDANI, S.Pd
-            <div class="modal" id="foto-eka">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/eka.jpg" alt="Eka Kusuma" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas II b</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-hodijah"><img src="images/hodijah.jpg" alt="Siti Hodijah" class="foto-guru"></a>
-            SITI HODIJAH
-            <div class="modal" id="foto-hodijah">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/hodijah.jpg" alt="Siti Hodijah" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas II c</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-ikbar"><img src="images/ikbar.jpg" alt="Muhamad Ikbarudin" class="foto-guru"></a>
-            MUHAMAD IKBARUDIN
-            <div class="modal" id="foto-ikbar">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/ikbar.jpg" alt="Muhamad Ikbarudin" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru PAIdB</td>
-    </tr>
-    <tr>
-        <td class="nama-guru">
-            <a href="#foto-ramlan"><img src="images/ramlan.jpg" alt="Muhamad Ramlan" class="foto-guru"></a>
-            MUHAMAD RAMLAN
-            <div class="modal" id="foto-ramlan">
-                <a href="#" class="overlay"></a>
-                <div class="modal-content"><img src="images/ramlan.jpg" alt="Muhamad Ramlan" class="modal-img"><a href="#" class="close">&times;</a></div>
-            </div>
-        </td>
-        <td>Guru</td>
-        <td>Guru Kelas V a</td>
-    </tr>
-</tbody>
+                <div class="modal-content">
+                  <img src="images/yanti.jpg" alt="Yanti" class="modal-img" />
+                  <a href="#" class="close">&times;</a>
+                </div>
+              </div>
+            </td>
+            <td>YANTI PERMASIH, S.Pd</td>
+            <td>Guru</td>
+            <td>Guru Kelas II a</td>
+          </tr>
+          <!-- Tambahkan guru lainnya sesuai kebutuhan -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Guru Amatiran SD N Citeko 03
+  </footer>
+</body>
+</html>
