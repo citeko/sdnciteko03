@@ -5,7 +5,6 @@
 <title>Staf Sekolah - SD Negeri Citeko 03</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-  /* Reset dan style dasar */
   body {
     font-family: Arial, sans-serif;
     margin: 0; padding: 0;
@@ -40,65 +39,45 @@
     padding: 0 15px 40px;
   }
   h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #2d00aa;
+    text-align: center;
   }
 
-  /* TABEL DESKTOP */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  }
-  th, td {
-    border: 1px solid #ccc;
-    padding: 12px 10px;
-    text-align: left;
-  }
-  th {
-    background-color: #005baa;
-    color: white;
+  /* Container kartu staf */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
   }
 
-  /* RESPONSIVE TABLE: Ubah tabel jadi blok kartu */
-  @media (max-width: 600px) {
-    table, thead, tbody, tr, th, td {
-      display: block;
-      width: 100%;
-    }
-    thead tr {
-      display: none; /* sembunyikan header */
-    }
-    tr {
-      margin-bottom: 18px;
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.08);
-    }
-    td {
-      padding-left: 50%;
-      position: relative;
-      border: none;
-      border-bottom: 1px solid #eee;
-      text-align: left;
-      font-size: 16px;
-    }
-    td:last-child {
-      border-bottom: 0;
-    }
-    td::before {
-      content: attr(data-label);
-      position: absolute;
-      left: 15px;
-      top: 15px;
-      font-weight: 600;
-      color: #005baa;
-      white-space: nowrap;
-      font-size: 14px;
-      text-transform: uppercase;
-    }
+  /* Kartu staf */
+  .card {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+  }
+  .card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  .card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #005baa;
+  }
+  .card p {
+    margin: 6px 0;
+    font-size: 14px;
+  }
+  .card .jabatan {
+    font-weight: bold;
+    color: #333;
+  }
+  .card .keterangan {
+    font-style: italic;
+    color: #666;
   }
 
   footer {
@@ -131,42 +110,33 @@
 <main>
   <section>
     <h2>Daftar Staf Sekolah</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>Jabatan</th>
-          <th>Keterangan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Nama">M. SAHLAN NAZARI, S.Pd</td>
-          <td data-label="Jabatan">Staf</td>
-          <td data-label="Keterangan">Operator BOSP</td>
-        </tr>
-        <tr>
-          <td data-label="Nama">MUHAMAD RAMLAN</td>
-          <td data-label="Jabatan">Staf</td>
-          <td data-label="Keterangan">Operator DAPODIK</td>
-        </tr>
-        <tr>
-          <td data-label="Nama">TARSIDIN</td>
-          <td data-label="Jabatan">Staf</td>
-          <td data-label="Keterangan">Penjaga Sekolah</td>
-        </tr>
-        <tr>
-          <td data-label="Nama">TARSIDIN</td>
-          <td data-label="Jabatan">Staf</td>
-          <td data-label="Keterangan">Petugas Kebersihan</td>
-        </tr>
-        <tr>
-          <td data-label="Nama">TARSIDIN</td>
-          <td data-label="Jabatan">Staf</td>
-          <td data-label="Keterangan">Pembantu Umum</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="card-container">
+      <div class="card">
+        <h3>M. SAHLAN NAZARI, S.Pd</h3>
+        <p class="jabatan">Staf</p>
+        <p class="keterangan">Operator BOSP</p>
+      </div>
+      <div class="card">
+        <h3>MUHAMAD RAMLAN</h3>
+        <p class="jabatan">Staf</p>
+        <p class="keterangan">Operator DAPODIK</p>
+      </div>
+      <div class="card">
+        <h3>TARSIDIN</h3>
+        <p class="jabatan">Staf</p>
+        <p class="keterangan">Penjaga Sekolah</p>
+      </div>
+      <div class="card">
+        <h3>TARSIDIN</h3>
+        <p class="jabatan">Staf</p>
+        <p class="keterangan">Petugas Kebersihan</p>
+      </div>
+      <div class="card">
+        <h3>TARSIDIN</h3>
+        <p class="jabatan">Staf</p>
+        <p class="keterangan">Pembantu Umum</p>
+      </div>
+    </div>
   </section>
 </main>
 
