@@ -1,74 +1,109 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <title>Kontak - SD Negeri Citeko 03</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <style>
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        label, input, textarea {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        input, textarea {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #004999;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - SD Negeri Citeko 03</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #0066cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    main {
+      padding: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label, input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004999;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>SD Negeri Citeko 03</h1>
-        <p>Website Resmi Sekolah</p>
-    </header>
+  <header>
+    <h1>SD Negeri Citeko 03</h1>
+    <p>Website Resmi Sekolah</p>
+  </header>
 
-    <nav>
-        <a href="index.html">Beranda</a>
-        <a href="profil.html">Profil</a>
-        <a href="guru.html">Guru</a>
-        <a href="staf.html">Staf</a>
-        <a href="berita.html">Berita</a>
-        <a href="agenda.html">Agenda</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="kontak.html">Kontak</a>
-    </nav>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="profil.html">Profil</a>
+    <a href="guru.html">Guru</a>
+    <a href="staf.html">Staf</a>
+    <a href="berita.html">Berita</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
 
-    <main>
-        <section>
-            <h2>Kontak Kami</h2>
-            <form action="https://formsubmit.co/nurindahwita@gmail.com" method="POST">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://citeko.github.io/kontak.html">
-              <input type="hidden" name="_template" value="table">
-              <label for="name">Nama:</label>
-              <input type="text" id="name" name="name" required>
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-              <label for="pesan">Pesan:</label>
-              <textarea id="pesan" name="message" rows="5" required></textarea>
-              <button type="submit">Kirim</button>
-            </form>
-        </section>
-    </main>
+  <main>
+    <section>
+      <h2>Kontak Kami</h2>
+      <form action="https://formsubmit.co/nurindahwita@gmail.com" method="POST">
+        <!-- Hidden configs -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://USERNAME.github.io/terimakasih.html">
+        <input type="hidden" name="_template" value="table">
 
-    <footer>
-        &copy; 2025 Guru Amatiran From SD N Citeko 03
-    </footer>
+        <!-- Form fields -->
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Guru Amatiran From SD N Citeko 03
+  </footer>
 </body>
 </html>
